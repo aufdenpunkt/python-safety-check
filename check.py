@@ -2,8 +2,7 @@ import os
 import sys
 import json
 
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-FILE = os.path.join(CURRENT_DIR, 'output.json')
+FILE = '/output.json'
 
 try:
     with open(FILE, 'r') as d:
