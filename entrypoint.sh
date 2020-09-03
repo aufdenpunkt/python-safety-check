@@ -11,13 +11,15 @@ echo -e "Requirements path set as: " $REQS
 if [[ "$ENV_TYPE" == "venv" ]]; then
     pip install safety
     pip install -r $REQS
-    cd $MANAGE_PATH && safety check -o output.txt
+    cd $MANAGE_PATH && safety check -o output.txt && safety check --json -o output.json
 fi
 if [[ -z "$ENV_TYPE" ]]; then
     echo "No virtual environment specified."
     pip install django
-    cd $MANAGE_PATH && safety check -o output.txt
+    cd $MANAGE_PATH && safety check -o output.txt && safety check --json -o output.json
 fi
 
 echo -e "\n--------- Python Safety Check results ---------"
 cat output.txt
+
+python check.py
