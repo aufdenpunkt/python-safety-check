@@ -1,0 +1,9 @@
+name: 'Python Safety Check'
+description: 'Helps to find known security vulnerabilities in your python application'
+author: aufdenpunkt
+branding:
+  icon: 'shield'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
