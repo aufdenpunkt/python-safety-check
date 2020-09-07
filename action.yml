@@ -5,8 +5,8 @@ inputs:
   safety_args:
     description: Optional Safety script parameters. (e.g. --ignore=1234 or -i 1234)
     default: ''
-  use_requirements_file_only:
-    description: Set true to prevent installing python packages.
+  scan_requirements_file_only:
+    description: Set true to scan required python packages without installing them.
     default: false
 branding:
   icon: 'shield'
