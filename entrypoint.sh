@@ -14,7 +14,8 @@ echo -e "\n------------ Install requirements -------------"
 echo -e "INFO: Call command $ pip install safety"
 pip install safety
 
-if [ "$SCAN_REQUIREMENTS_FILE_ONLY" -eq "false" ]; then
+if [ "$SCAN_REQUIREMENTS_FILE_ONLY" == "false" ]
+then
     echo -e "INFO: Call command $ pip install -r ${REQS}"
     pip install -r $REQS
 else
@@ -31,7 +32,8 @@ echo -e "\n--------- Python Safety Check results ---------"
 echo -e "INFO: Call command $ cat output.txt"
 cat output.txt
 
-if [ "$EXIT_CODE" -eq 0 ]; then
+if [ "$EXIT_CODE" -eq 0 ]
+then
     echo -e "\nINFO: exit 0"
     exit 0
 else
