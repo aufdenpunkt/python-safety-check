@@ -1,25 +1,19 @@
 #!/bin/bash
 # Omits 'set -e' because short-circuiting this script fails the GitHub action unintentionally
 
-FAIL=${FAIL_LEVEL:=ERROR}
-MANAGE_PATH=${GITHUB_WORKSPACE}/${APP_PATH}
 REQS=${GITHUB_WORKSPACE}/${DEP_PATH}
+SAFETY_ARGS=${INPUT_SAFETY_ARGS}
 
-echo -e "Path to manage.py set as: " $MANAGE_PATH
 echo -e "Requirements path set as: " $REQS
+echo -e "Safety args set as: " $SAFETY_ARGS
 
-if [[ "$ENV_TYPE" == "venv" ]]; then
-    pip install safety
-    pip install -r $REQS
-    cd $MANAGE_PATH && safety check --short-report &> output.txt
-    EXIT_CODE=$?
-fi
-if [[ -z "$ENV_TYPE" ]]; then
-    echo "No virtual environment specified."
-    pip install django
-    cd $MANAGE_PATH && safety check --short-report &> output.txt
-    EXIT_CODE=$?
-fi
+echo -e "\n---------- Install pip requirements -----------"
+pip install safety
+pip install -r $REQS
+
+echo -e "\n-------------- Do safety checks ---------------"
+safety check --short-report $SAFETY_ARGS &> output.txt
+EXIT_CODE=$?
 
 echo -e "\n--------- Python Safety Check results ---------"
 cat output.txt
