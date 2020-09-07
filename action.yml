@@ -7,7 +7,7 @@ inputs:
     default: ''
   scan_requirements_file_only:
     description: Set true to scan required python packages without installing them.
-    default: false
+    default: 'false'
 branding:
   icon: 'shield'
   color: 'green'
