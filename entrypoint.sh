@@ -6,8 +6,8 @@ SAFETY_ARGS=${INPUT_SAFETY_ARGS}
 SCAN_REQUIREMENTS_FILE_ONLY=${INPUT_SCAN_REQUIREMENTS_FILE_ONLY}
 
 echo -e "\n----------------- Variables -------------------"
-echo -e "INFO: Requirements path " $REQS
-echo -e "INFO: Scan requirements file only " $SCAN_REQUIREMENTS_FILE_ONLY
+echo -e "INFO: Requirements path ${REQS}"
+echo -e "INFO: Scan requirements file only ${SCAN_REQUIREMENTS_FILE_ONLY}"
 echo -e "INFO: Safety args ${SAFETY_ARGS:-Not provided}"
 
 echo -e "\n------------ Install requirements -------------"
