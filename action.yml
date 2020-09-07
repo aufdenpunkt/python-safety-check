@@ -3,8 +3,11 @@ description: 'Helps to find known security vulnerabilities in your python applic
 author: aufdenpunkt
 inputs:
   safety_args:
-     description: Optional Safety parameters (e.g. --ignore=1234 or -i 1234)
-     default: ''
+    description: Optional Safety script parameters. (e.g. --ignore=1234 or -i 1234)
+    default: ''
+  use_requirements_file_only:
+    description: Set true to prevent installing python packages.
+    default: false
 branding:
   icon: 'shield'
   color: 'green'
