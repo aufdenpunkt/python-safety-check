@@ -30,9 +30,13 @@ jobs:
         uses: aufdenpunkt/python-safety-check@master
 ```
 
+### ENV variables
+
+To let the script know, where your `requirements.txt` file located is, you have to set the `DEP_PATH` environment variable. See the example above.
+
 ### Parameters
 
-#### safety_args
+#### `safety_args`
 
 This parameter is useful if you want to provide additional arguments to the command call. In the example below, I want to ignore a specific known issue. But you can pass any argument, which you can find in the [documentation](https://github.com/pyupio/safety#options).
 
@@ -45,7 +49,7 @@ _Example_:
     safety_args: '-i 35015'
 ```
 
-#### scan_requirements_file_only
+#### `scan_requirements_file_only`
 
 If you want to check only packages defined in your `requirements.txt` you are able to set this parameter to `'true'`.
 
