@@ -16,9 +16,6 @@ echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Scan requirements file only: ${SCAN_REQ
 echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Safety args: ${SAFETY_ARGS:-Not provided}"
 
 echo -e "\n------------ Install requirements -------------"
-echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Call command: pip install safety"
-pip install safety
-
 if [ "$SCAN_REQUIREMENTS_FILE_ONLY" == "false" ]
 then
     echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Call command: pip install -r ${REQS}"
