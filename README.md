@@ -32,7 +32,7 @@ jobs:
 
 ### ENV variables
 
-To let the script know, where your `requirements.txt` file located is, you have to set the `DEP_PATH` environment variable. See the example above.
+To let the script know, where your `requirements.txt` file located is, you can to set the `DEP_PATH` environment variable. By default, the script will check the root of the repository for `requirements.txt` file. See the example above.
 
 ### Parameters
 
