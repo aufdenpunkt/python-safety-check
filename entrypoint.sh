@@ -26,6 +26,11 @@ if [ "$SCAN_REQUIREMENTS_FILE_ONLY" == "false" ]
 then
     echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Call command: pip install -r ${REQS}"
     pip install -r $REQS
+    EXIT_CODE=$?
+    if [ "$EXIT_CODE" -eq 1 ]
+        echo -e "\nRequirements file not found."
+        exit 1
+    then
 else
     echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Skip installing python packages"
     SAFETY_ARGS="${SAFETY_ARGS} -r ${REQS}"
