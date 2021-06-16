@@ -29,7 +29,7 @@ then
     EXIT_CODE=$?
     if [ "$EXIT_CODE" -eq 1 ]
     then
-        echo -e "\nRequirements file not found."
+        echo -e "\nThe installation of the dependencies failed."
         exit 1
     fi
 else
