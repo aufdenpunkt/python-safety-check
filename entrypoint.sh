@@ -7,7 +7,7 @@ COLOR_YELLOW='\033[1;33m'
 COLOR_OFF='\033[0m'
 
 if [[ -z "${DEP_PATH}" ]]; then
-  DEP_PATH="./requirenments.txt"
+  DEP_PATH="./requirements.txt"
 else
   DEP_PATH="${DEP_PATH}"
 fi
