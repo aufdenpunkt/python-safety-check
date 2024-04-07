@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM python:3.11.9
+FROM python:latest
 
 # Install python safety package
 RUN pip install --upgrade pip && pip install safety
