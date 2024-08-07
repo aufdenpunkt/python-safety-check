@@ -39,7 +39,7 @@ fi
 
 echo -e "\n-------------- Do safety checks ---------------"
 echo -e "${COLOR_YELLOW}INFO${COLOR_OFF} Call command: safety check --short-report ${SAFETY_ARGS} &> output.txt"
-safety check --short-report $SAFETY_ARGS &> output.txt
+safety scan --short-report $SAFETY_ARGS &> output.txt
 EXIT_CODE=$?
 
 echo -e "\n--------- Python Safety Check results ---------"
